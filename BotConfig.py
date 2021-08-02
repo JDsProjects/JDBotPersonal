@@ -2,7 +2,7 @@ import contextlib, aiohttp, re, discord, os, traceback
 from discord.ext import commands
 
 async def get_prefix(bot, message):
-  extras = ["test+","te+", "t+"]
+  extras = ["jd+","jd+", "jd+"]
   comp = re.compile("^(" + "|".join(map(re.escape, extras)) + ").*", flags=re.I)
   match = comp.match(message.content)
   if match is not None:
