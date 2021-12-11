@@ -68,7 +68,7 @@ class Bot(commands.Cog):
     embed.add_field(name="ID:",value=owner.id)
     embed.add_field(name="Status:",value=status)
     embed.add_field(name="Highest Role:",value=highest_role)
-    embed.set_image(url=owner.avatar_url)
+    embed.set_image(url=owner.display_avatar.url)
     await ctx.send(embed=embed)
 
 def setup(bot):

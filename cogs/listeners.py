@@ -28,12 +28,20 @@ class Events(commands.Cog):
   async def on_guild_remove(self, guild):
     channels = [channel for channel in guild.channels]
     roles = roles= [role for role in guild.roles]
-    embed = discord.Embed(title="Bot just left: "+str(guild.name), color=random.randint(0,16777215))
-    embed.set_thumbnail(url = guild.icon_url)
-    embed.add_field(name='Server Name:',value=f'{guild.name}')
-    embed.add_field(name='Server ID:',value=f'{guild.id}')
-    embed.add_field(name='Server region:',value=f'{guild.region}')
-    embed.add_field(name='Server Creation Date:',value=f'{guild.created_at}')
+    embed = discord.Embed(title = f"Bot just left : {guild.name}", color = random.randint(0,16777215))
+    
+    embed.set_thumbnail(url = guild.icon.url if guild.icon else "https://i.imgur.com/3ZUrjUP.png")
+
+    embed.add_field(name = 'Server Name:', value = f'{guild.name}')
+    embed.add_field(name = 'Server ID:', value = f'{guild.id}')
+
+    try:
+      embed.add_field(name = 'Server region:', value=f'{guild.region}')
+
+    except:
+      pass
+
+    embed.add_field(name='Server Creation Date:', value=f"{discord.utils.format_dt(guild.created_at, style = 'd')}\n{discord.utils.format_dt(guild.created_at, style = 'T')}")
     embed.add_field(name='Server Owner:',value=f'{guild.owner}')
     embed.add_field(name='Server Owner ID:',value=f'{guild.owner_id}')
     try:
