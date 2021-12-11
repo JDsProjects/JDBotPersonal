@@ -8,7 +8,7 @@ authors = ["Your Name <you@example.com>"]
 python = "^3.8"
 Flask = "^2.0.1"
 jishaku = {git = "https://github.com/Gorialis/jishaku.git"}
-"discord.py" = {extras = ["voice"], version = "^1.7.1"}
+"discord.py" = {git = "https://github.com/iDevision/enhanced-discord.py", branch = "2.0"}
 
 [tool.poetry.dev-dependencies]
 
