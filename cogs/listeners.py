@@ -75,15 +75,6 @@ class Events(commands.Cog):
       embed_message.set_footer(text = f"{message.author.id}")
       embed_message.set_thumbnail(url="https://i.imgur.com/bW6ergl.png")
       await self.bot.get_channel(852897595869233182).send(embed=embed_message)
-  
-  @commands.Cog.listener()
-  async def on_error(event,*args,**kwargs):
-    import traceback
-    more_information=os.sys.exc_info()
-    error_wanted=traceback.format_exc()
-    traceback.print_exc()
-    
-    #print(more_information[0])
 
 def setup(client):
   client.add_cog(Events(client))

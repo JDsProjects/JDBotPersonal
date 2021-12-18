@@ -37,6 +37,13 @@ class JDBotPersonal(commands.Bot):
   
 bot = JDBotPersonal(command_prefix=(get_prefix),intents= discord.Intents.all(),strip_after_prefix = True)
 
+@bot.event
+async def on_error(event, *args, **kwargs):
+  more_information = os.sys.exc_info()
+  error_wanted = traceback.format_exc()
+  traceback.print_exc()
+  #print(more_information[0])
+
 bot.load_extension('jishaku')
 
 for filename in os.listdir('./cogs'):
