@@ -71,5 +71,5 @@ class Bot(commands.Cog):
     embed.set_image(url=owner.display_avatar.url)
     await ctx.send(embed=embed)
 
-def setup(bot):
-  bot.add_cog(Bot(bot))
+async def setup(bot):
+  await bot.add_cog(Bot(bot))

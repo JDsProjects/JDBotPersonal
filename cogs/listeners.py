@@ -76,5 +76,5 @@ class Events(commands.Cog):
       embed_message.set_thumbnail(url="https://i.imgur.com/bW6ergl.png")
       await self.bot.get_channel(852897595869233182).send(embed=embed_message)
 
-def setup(client):
-  client.add_cog(Events(client))
+async def setup(bot):
+  await bot.add_cog(Events(bot))
