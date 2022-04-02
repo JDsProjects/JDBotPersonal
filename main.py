@@ -1,6 +1,8 @@
 import discord,  re, os, traceback, logging, contextlib, aiohttp
 from discord.ext import commands
-import B
+import dotenv
+
+dotenv.load_dotenv()
 
 async def get_prefix(bot, message):
   extras = ["jd+","jd+", "jd+"]
@@ -58,5 +60,5 @@ async def on_error(event, *args, **kwargs):
 
 logging.basicConfig(level=logging.INFO)
 
-B.b()
+
 bot.run(os.environ["TOKEN"])
