@@ -7,12 +7,9 @@ import traceback
 
 import aiohttp
 import discord
-import dotenv
 from discord.ext import commands
 
 from cogs import EXTENSIONS
-
-dotenv.load_dotenv()
 
 
 async def get_prefix(bot, message):
