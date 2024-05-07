@@ -64,7 +64,7 @@ class Bot(commands.Cog):
 
         if owner:
             nickname = str(owner.nick)
-            joined_guild = owner.joined_at.strftime("%m/%d/%Y %H:%M:%S")
+            joined_guild = discord.utils.format_dt(owner.joined_at, "F")
             status = str(owner.status).upper()
             highest_role = owner.roles[-1]
 
@@ -88,7 +88,7 @@ class Bot(commands.Cog):
         embed.add_field(name="Username:", value=owner.name)
         embed.add_field(name="Discriminator:", value=owner.discriminator)
         embed.add_field(name="Nickname: ", value=nickname)
-        embed.add_field(name="Joined Discord: ", value=(owner.created_at.strftime("%m/%d/%Y %H:%M:%S")))
+        embed.add_field(name="Joined Discord: ", value=discord.utils.format_dt(owner.created_at, "F"))
         embed.add_field(name="Joined Guild: ", value=joined_guild)
         embed.add_field(name="Mutual Guilds:", value=guild_list)
         embed.add_field(name="ID:", value=owner.id)
