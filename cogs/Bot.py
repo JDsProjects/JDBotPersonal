@@ -46,7 +46,7 @@ class Bot(commands.Cog):
 
     @commands.command(brief="gives you who the owner is.")
     async def owner(self, ctx):
-        info = await self.bot.application_info()
+        info = self.bot.application
         owner_id = info.team.owner_id if info.team else info.owner.id
 
         support_guild = self.bot.get_guild(438848185008390158)
